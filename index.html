@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hello Bulma!</title>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+
+    <style>
+      .player-headshot {
+        border-radius: 40px;
+        height: 25px;
+        margin-right: 8px;
+        margin-bottom: -7px
+      }
+      td.seperator {
+        background-color: #f7f7f7;
+      }
+      .positive {
+        color: green;
+      }
+      .negative {
+        color: red;
+      }
+      td {
+        position: relative;
+      }
+      tr.strikethru td:before {
+        content: " ";
+        position: absolute;
+        top: 50%;
+        left: 0;
+        border-bottom: 1px solid #111;
+        width: 100%;
+      }
+
+
+    </style>
+  </head>
+  <body>
+  <section class="section">
+    <div class="container">
+      <h1 class="title">
+        My Rankings
+      </h1>
+      <p class="subtitle">
+        My custom rankings utilizing steamer projections, baseballhq reliability scores, & fantasypros adp.
+      </p>
+
+      <table class="table" id="rankings">
+        <thead>
+          <tr>
+            <th class="seperator">&nbsp;</th>
+            <th>Rnk</th>
+            <th>Name</th>
+            <th>Pos</th>
+            <th class="seperator">&nbsp;</th>
+            <th>R</th>
+            <th>HR</th>
+            <th>RBI</th>
+            <th>SB</th>
+            <th>OBP</th>
+            <th class="seperator">&nbsp;</th>
+            <!--
+            <th>K</th>
+            <th>W</th>
+            <th>ERA</th>
+            <th>WHIP</th>
+            <th>SVHD</th>
+            <th class="seperator">&nbsp;</th>
+            <th>Age</th>
+            <th>Rel</th>
+            <th class="seperator">&nbsp;</th>
+            -->
+            <th>ADP</th>
+            <th>ESPN</th>
+            <th>AVG</th>
+            <th>DIFF</th>
+          </tr>
+        </thead>
+        <tfoot>
+          <tr>
+            <th class="seperator">&nbsp;</th>
+            <th>Rnk</th>
+            <th>Name</th>
+            <th>Pos</th>
+            <th class="seperator">&nbsp;</th>
+            <th>R</th>
+            <th>HR</th>
+            <th>RBI</th>
+            <th>SB</th>
+            <th>OBP</th>
+            <!--
+            <th class="seperator">&nbsp;</th>
+            <th>K</th>
+            <th>W</th>
+            <th>ERA</th>
+            <th>WHIP</th>
+            <th>SVHD</th>
+            <th class="seperator">&nbsp;</th>
+            <th>Age</th>
+            <th>Rel</th>
+            -->
+            <th class="seperator">&nbsp;</th>
+            <th>ADP</th>
+            <th>ESPN</th>
+            <th>AVG</th>
+            <th>DIFF</th>
+          </tr>
+        </tfoot>
+        <tbody>
+          <tr data-player="545361">
+            <td><input type="checkbox" class="check" /></td>
+            <td class="rank">1</td>
+            <td class="name"><img class="player-headshot" src="http://gdx.mlb.com/images/gameday/mugshots/mlb/545361.jpg" />Mike Trout</td>
+            <td class="pos">OF</td>
+            <td class="seperator">&nbsp;</td>
+            <td class="runs">111</td>
+            <td class="hrs">38</td>
+            <td class="rbis">106</td>
+            <td class="sbs">20</td>
+            <td class="obp">434</td>
+            <!--
+            <td class="seperator">&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class="seperator">&nbsp;</td>
+            <td>26</td>
+            <td>A</td>
+            -->
+            <td class="seperator">&nbsp;</td>
+            <td class="rank-adp">1</td>
+            <td class="rank-espn">1</td>
+            <td class="rank-avg">1</td>
+            <td class="rank-diff">0</td>
+          </tr>
+          <tr data-player="514888">
+            <td><input type="checkbox" class="check" /></td>
+            <td class="rank">2</td>
+            <td class="name"><img class="player-headshot" src="http://gdx.mlb.com/images/gameday/mugshots/mlb/514888.jpg" />Jose Altuve</td>
+            <td class="pos">2B</td>
+            <td class="seperator">&nbsp;</td>
+            <td class="runs">94</td>
+            <td class="hrs">19</td>
+            <td class="rbis">85</td>
+            <td class="sbs">24</td>
+            <td class="obp">369</td>
+            <!--
+            <td class="seperator">&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class="seperator">&nbsp;</td>
+            <td>28</td>
+            <td>A</td>
+            -->
+            <td class="seperator">&nbsp;</td>
+            <td class="rank-adp">2</td>
+            <td class="rank-espn">2</td>
+            <td class="rank-avg">2</td>
+            <td class="rank-diff">0</td>
+          </tr>
+          <tr data-player="571448">
+            <td><input type="checkbox" class="check" /></td>
+            <td class="rank">3</td>
+            <td class="name"><img class="player-headshot" src="http://gdx.mlb.com/images/gameday/mugshots/mlb/571448.jpg" />Nolan Arenado</td>
+            <td class="pos">3B</td>
+            <td class="seperator">&nbsp;</td>
+            <td class="runs">97</td>
+            <td class="hrs">38</td>
+            <td class="rbis">112</td>
+            <td class="sbs">3</td>
+            <td class="obp">360</td>
+            <!--
+            <td class="seperator">&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class="seperator">&nbsp;</td>
+            <td>27</td>
+            <td>A</td>
+            -->
+            <td class="seperator">&nbsp;</td>
+            <td class="rank-adp">3</td>
+            <td class="rank-espn">3</td>
+            <td class="rank-avg">3</td>
+            <td class="rank-diff">0</td>
+          </tr>
+          <tr data-player="605141">
+            <td><input type="checkbox" class="check" /></td>
+            <td class="rank">4</td>
+            <td class="name"><img class="player-headshot" src="http://gdx.mlb.com/images/gameday/mugshots/mlb/605141.jpg" />Mookie Betts</td>
+            <td class="pos">OF</td>
+            <td class="seperator">&nbsp;</td>
+            <td class="runs">103</td>
+            <td class="hrs">27</td>
+            <td class="rbis">90</td>
+            <td class="sbs">21</td>
+            <td class="obp">370</td>
+            <!--
+            <td class="seperator">&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class="seperator">&nbsp;</td>
+            <td>25</td>
+            <td>B</td>
+            -->
+            <td class="seperator">&nbsp;</td>
+            <td class="rank-adp">9</td>
+            <td class="rank-espn">4</td>
+            <td class="rank-avg">6.5</td>
+            <td class="rank-diff">+2.5</td>
+          </tr>
+          <tr data-player="607208">
+            <td><input type="checkbox" class="check" /></td>
+            <td class="rank">5</td>
+            <td class="name"><img class="player-headshot" src="http://gdx.mlb.com/images/gameday/mugshots/mlb/607208.jpg" />Trea Turner</td>
+            <td class="pos">SS</td>
+            <td class="seperator">&nbsp;</td>
+            <td class="runs">94</td>
+            <td class="hrs">16</td>
+            <td class="rbis">65</td>
+            <td class="sbs">49</td>
+            <td class="obp">347</td>
+            <!--
+            <td class="seperator">&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class="seperator">&nbsp;</td>
+            <td>25</td>
+            <td>C</td>
+            -->
+            <td class="seperator">&nbsp;</td>
+            <td class="rank-adp">4</td>
+            <td class="rank-espn">6</td>
+            <td class="rank-avg">5</td>
+            <td class="rank-diff">0</td>
+          </tr>
+          <tr data-player="519317">
+            <td><input type="checkbox" class="check" /></td>
+            <td class="rank">6</td>
+            <td class="name"><img class="player-headshot" src="http://gdx.mlb.com/images/gameday/mugshots/mlb/519317.jpg" />Giancarlo Stanton</td>
+            <td class="pos">3B</td>
+            <td class="seperator">&nbsp;</td>
+            <td class="runs">103</td>
+            <td class="hrs">53</td>
+            <td class="rbis">125</td>
+            <td class="sbs">3</td>
+            <td class="obp">379</td>
+            <!--
+            <td class="seperator">&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class="seperator">&nbsp;</td>
+            <td>28</td>
+            <td>C</td>
+            -->
+            <td class="seperator">&nbsp;</td>
+            <td class="rank-adp">10</td>
+            <td class="rank-espn">10</td>
+            <td class="rank-avg">10</td>
+            <td class="rank-diff">+4</td>
+          </tr>
+          <tr data-player="502671">
+            <td><input type="checkbox" class="check" /></td>
+            <td class="rank">7</td>
+            <td class="name"><img class="player-headshot" src="http://gdx.mlb.com/images/gameday/mugshots/mlb/502671.jpg" />Paul Goldschmidt</td>
+            <td class="pos">1B</td>
+            <td class="seperator">&nbsp;</td>
+            <td class="runs">94</td>
+            <td class="hrs">29</td>
+            <td class="rbis">93</td>
+            <td class="sbs">16</td>
+            <td class="obp">405</td>
+            <!--
+            <td class="seperator">&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class="seperator">&nbsp;</td>
+            <td>30</td>
+            <td>A</td>
+            -->
+            <td class="seperator">&nbsp;</td>
+            <td class="rank-adp">6</td>
+            <td class="rank-espn">8</td>
+            <td class="rank-avg">7</td>
+            <td class="rank-diff">0</td>
+          </tr>
+          <tr data-player="547180">
+            <td><input type="checkbox" class="check" /></td>
+            <td class="rank">8</td>
+            <td class="name"><img class="player-headshot" src="http://gdx.mlb.com/images/gameday/mugshots/mlb/547180.jpg" />Bryce Harper</td>
+            <td class="pos">3B</td>
+            <td class="seperator">&nbsp;</td>
+            <td class="runs">96</td>
+            <td class="hrs">35</td>
+            <td class="rbis">98</td>
+            <td class="sbs">9</td>
+            <td class="obp">418</td>
+            <!--
+            <td class="seperator">&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class="seperator">&nbsp;</td>
+            <td>25</td>
+            <td>C</td>
+            -->
+            <td class="seperator">&nbsp;</td>
+            <td class="rank-adp">7</td>
+            <td class="rank-espn">5</td>
+            <td class="rank-avg">6</td>
+            <td class="rank-diff">-2</td>
+          </tr>
+          <tr data-player="592178">
+            <td><input type="checkbox" class="check" /></td>
+            <td class="rank">9</td>
+            <td class="name"><img class="player-headshot" src="http://gdx.mlb.com/images/gameday/mugshots/mlb/592178.jpg" />Kris Bryant</td>
+            <td class="pos">3B</td>
+            <td class="seperator">&nbsp;</td>
+            <td class="runs">102</td>
+            <td class="hrs">33</td>
+            <td class="rbis">94</td>
+            <td class="sbs">8</td>
+            <td class="obp">390</td>
+            <!--
+            <td class="seperator">&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class="seperator">&nbsp;</td>
+            <td>26</td>
+            <td>A</td>
+            -->
+            <td class="seperator">&nbsp;</td>
+            <td class="rank-adp">15</td>
+            <td class="rank-espn">13</td>
+            <td class="rank-avg">14</td>
+            <td class="rank-diff">+5</td>
+          </tr>
+          <tr data-player="621043">
+            <td><input type="checkbox" class="check" /></td>
+            <td class="rank">10</td>
+            <td class="name"><img class="player-headshot" src="http://gdx.mlb.com/images/gameday/mugshots/mlb/621043.jpg" />Carlos Correa</td>
+            <td class="pos">SS</td>
+            <td class="seperator">&nbsp;</td>
+            <td class="runs">87</td>
+            <td class="hrs">27</td>
+            <td class="rbis">94</td>
+            <td class="sbs">7</td>
+            <td class="obp">372</td>
+            <!--
+            <td class="seperator">&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class="seperator">&nbsp;</td>
+            <td>23</td>
+            <td>B</td>
+            -->
+            <td class="seperator">&nbsp;</td>
+            <td class="rank-adp">12</td>
+            <td class="rank-espn">9</td>
+            <td class="rank-avg">10.5</td>
+            <td class="rank-diff">+.5</td>
+          </tr>
+
+        </tbody>
+      </table>
+
+    </div>
+  </section>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+  <script src="js/main.js"></script>
+
+  </body>
+</html>
